@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>PokéPack Store</title>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&family=Orbitron:wght@700;900&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>  
+<div class="app-wrapper">
+
+  <nav class="navbar">
+    <div class="logo">Poké<span>Blox</span></div>
+    <div class="nav-right">
+      <a href="#products" class="nav-link">Shop</a>
+      <button class="cart-icon-btn" id="cartBtn" onclick="toggleCart()" aria-label="Open cart">
+        🛒
+        <span class="cart-badge" id="cartBadge" style="display:none">0</span>
+      </button>
+    </div>
+  </nav>
+
+  <section class="hero" id="hero"></section>
+
+  <section class="products-section" id="products">
+    <div class="section-header">
+      <div>
+        <div class="section-title">Card <span>Packs</span></div>
+        <div class="section-sub">8 packs available · Random cards · Pull rares</div>
+      </div>
+    </div>
+    <div class="products-flex" id="productsGrid"></div>
+  </section>
+
+  <div class="modal-overlay" id="cartOverlay" onclick="handleOverlayClick(event)">
+    <div class="cart-modal">
+      <div class="modal-header">
+        <div class="modal-title">🛒 Your Cart</div>
+        <button class="modal-close" onclick="toggleCart()">✕</button>
+      </div>
+      <div class="modal-body" id="cartBody"></div>
+      <div class="modal-footer" id="cartFooter" style="display:none">
+        <div class="cart-total-row">
+          <span class="ct-label">Total amount</span>
+          <span class="ct-amount" id="cartTotal">₱0</span>
+        </div>
+        <button class="checkout-btn" onclick="checkout()">Checkout ✦</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="toast-container" id="toastContainer"></div>
+
+  <footer>
+    <p>© 2026 PokéBlox Store. All rights reserved.</p>
+  </footer>
+
+</div>
+<script src="script.js"></script>
+</body>
+</html>
